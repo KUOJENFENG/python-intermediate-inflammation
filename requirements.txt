@@ -1,0 +1,18 @@
+altgraph @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
+exceptiongroup==1.3.0
+future @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
+iniconfig==2.1.0
+macholib @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
+networkx==3.2.1
+numpy==1.24.4
+packaging==25.0
+pandas==2.3.2
+pluggy==1.6.0
+Pygments==2.19.2
+pytest==8.4.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
+tomli==2.3.0
+typing_extensions==4.15.0
+tzdata==2025.2
