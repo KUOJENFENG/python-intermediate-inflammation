@@ -6,6 +6,7 @@ import pytest
 
 from inflammation.models import daily_mean, daily_max, daily_min
 
+
 def test_daily_mean_zeros():
     """Test that mean function works for an array of zeros."""
     
@@ -18,7 +19,6 @@ def test_daily_mean_zeros():
     # Need to use Numpy testing functions to compare arrays
     npt.assert_array_equal(daily_mean(test_input), test_result)
 
-
 def test_daily_mean_integers():
     """Test that mean function works for an array of positive integers."""
 
@@ -30,17 +30,19 @@ def test_daily_mean_integers():
     # Need to use Numpy testing functions to compare arrays
     npt.assert_array_equal(daily_mean(test_input), test_result)
 
-def test_daily_max():
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([ [0, 0, 0], [0, 0, 0], [0, 0, 0] ], [0, 0, 0]),
+        ([ [4, 2, 5], [1, 6, 2], [4, 1, 9] ], [4, 6, 9]),
+        ([ [4, -2, 5], [1, -6, 2], [-4, -1, 9] ], [4, -1, 9]),
+    ])
+
+def test_daily_max(test, expected):
     """Test that maximum function works for an array of zeros."""
     
-
-    test_input = np.array([[1, 4],
-                           [2, 9],
-                           [100, 10]])
-    test_result = np.array([100, 10])
-
     # Need to use Numpy testing functions to compare arrays
-    npt.assert_array_equal(daily_max(test_input), test_result)
+    npt.assert_array_equal(daily_max(np.array(test)), np.array(expected))
 
 def test_daily_mean():
     """Test that mean function works."""
@@ -54,17 +56,19 @@ def test_daily_mean():
     # Need to use Numpy testing functions to compare arrays
     npt.assert_array_equal(daily_mean(test_input), test_result)
 
-def test_daily_min():
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([ [0, 0, 0], [0, 0, 0], [0, 0, 0] ], [0, 0, 0]),
+        ([ [4, 2, 5], [1, 6, 2], [4, 1, 9] ], [1, 1, 2]),
+        ([ [4, -2, 5], [1, -6, 2], [-4, -1, 9] ], [-4, -6, 2]),
+    ])
+
+def test_daily_min(test, expected):
     """Test that minimum function works for an array of zeros."""
     
-
-    test_input = np.array([[-1, 4],
-                           [12, 79],
-                           [10, 11]])
-    test_result = np.array([-1, 4])
-
     # Need to use Numpy testing functions to compare arrays
-    npt.assert_array_equal(daily_min(test_input), test_result)
+    npt.assert_array_equal(daily_min(np.array(test)), np.array(expected))
 
 def test_daily_min_string():
     """Test for TypeError when passing strings"""
